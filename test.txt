@@ -1,4 +1,5 @@
 a = orther2
+b=other2 90
 this is new file
 modified by orther2 ha ha 
 
