@@ -1,4 +1,4 @@
-b = t4 90
+b = t4 other2 90
 a = orther2
 
 this is new file
