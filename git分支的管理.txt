@@ -1,0 +1,41 @@
+git merge的相关命令：
+
+最好是先fetch :git fetch origin orther2:orther2
+然后再merge 
+git merge [options] <msg> HEAD <commit>
+解释：把HEAD分支合并到当前分支
+
+比如要把dev分支上的所有东东合并到master分支：
+　　首先先到master分支：git checkout master
+　　然后把dev给合并过来：git merge dev
+注意没参数的情况下merge是fast-forward的，即Git将master分支的指针直接移到dev的最前方。
+
+
+1. git fetch：相当于是从远程获取最新版本到本地，不会自动merge
+git fetch origin master
+git log -p master..origin/master
+git merge origin/master
+   以上命令的含义：
+   首先从远程的origin的master主分支下载最新的版本到origin/master分支上
+   然后比较本地的master分支和origin/master分支的差别
+   最后进行合并
+   上述过程其实可以用以下更清晰的方式来进行：
+git fetch origin master:tmp
+git diff tmp 
+git merge tmp
+2. git pull：相当于是从远程获取最新版本并merge到本地
+ git pull origin master
+
+上述命令其实相当于git fetch 和 git merge
+在实际使用中，git fetch更安全一些
+因为在merge前，我们可以查看更新情况，然后再决定是否合并
+
+
+合并时出错：
+
+
+
+
+
+
+
